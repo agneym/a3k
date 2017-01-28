@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Coming Soon - A3K 2017</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		.homepage-banner {
+					border-right: none;
+					border-left: none;
+					position: relative;
+			}
+			.no-video .animation-container video,
+			.touch .animation-container video {
+					display: none;
+			}
+			.no-video .animation-container .animation,
+			.touch .animation-container .animation {
+					display: block !important;
+			}
+			.animation-container {
+					position: relative;
+					bottom: 0%;
+					left: 0%;
+					height: 100%;
+					width: 100%;
+					overflow: hidden;
+					background: #000;
+			}
+			.animation-container .animation img {
+					width: 100%;
+					bottom: 0;
+					position: absolute;
+			}
+			.animation-container .mask {
+					z-index: 100;
+					position: absolute;
+					background: rgba(0, 0, 0, 0.4);
+					width: 100%;
+			}
+			.animation-container video {
+					position: absolute;
+					z-index: 0;
+					bottom: 0;
+			}
+			.animation-container video.fillScreen {
+					width: 100%;
+			}
+	</style>
+</head>
+
+<body>
+	<div class="homepage-banner">
+		<div class="animation-container">
+			<div class="mask"></div>
+			<video autoplay loop class="fillScreen" poster="./images/zti2fc1z79.jpg">
+				<source src="./images/zti2fc1z79.mp4" type="video/mp4" />
+				<source src="./images/zti2fc1z79.webm" type="video/webm" />Please upgrade your browser, it does not support the video tag.
+			</video>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.js"></script>
+	<script>
+		$( document ).ready(function() {
+
+    scaleAnimationContainer();
+
+    initBannerAnimationSize('.animation-container .animation img');
+    initBannerAnimationSize('.animation-container .mask');
+    initBannerAnimationSize('.animation-container video');
+
+    $(window).on('resize', function() {
+        scaleAnimationContainer();
+        scaleBannerAnimationSize('.animation-container .animation img');
+        scaleBannerAnimationSize('.animation-container .mask');
+        scaleBannerAnimationSize('.animation-container video');
+    });
+
+});
+
+function scaleAnimationContainer() {
+
+    var height = $(window).height() + 5;
+    var unitHeight = parseInt(height) + 'px';
+    $('.homepage-banner').css('height',unitHeight);
+
+}
+
+function initBannerAnimationSize(element){
+
+    $(element).each(function(){
+        $(this).data('height', $(this).height());
+        $(this).data('width', $(this).width());
+    });
+
+    scaleBannerAnimationSize(element);
+
+}
+
+function scaleBannerAnimationSize(element){
+
+    var windowWidth = $(window).width(),
+    windowHeight = $(window).height() + 5,
+    animationWidth,
+    animationHeight;
+
+    console.log(windowHeight);
+
+    $(element).each(function(){
+        var animationAspectRatio = $(this).data('height')/$(this).data('width');
+
+        $(this).width(windowWidth);
+
+        if(windowWidth < 1000){
+            animationHeight = windowHeight;
+            animationWidth = animationHeight / animationAspectRatio;
+            $(this).css({'margin-top' : 0, 'margin-left' : -(animationWidth - windowWidth) / 2 + 'px'});
+
+            $(this).width(animationWidth).height(animationHeight);
+        }
+
+        $('.homepage-banner .animation-container video').addClass('fadeIn animated');
+
+    });
+}
+	</script>
+
+</body>
+
+</html>

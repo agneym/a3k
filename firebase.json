@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "dist",
+    "redirects": [
+      {
+        "source": "/about",
+        "destination": "/about.html",
+        "type": 301
+      }
+    ]
+  }
+}

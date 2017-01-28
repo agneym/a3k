@@ -1,0 +1,135 @@
+/******************
+GENERAL
+******************/
+$bg-color: #000000;
+$font-color: #ffffff;
+
+body{
+	margin: 0;
+	overflow: hidden; 
+	width: 100%;
+	position: relative;
+	background-color: $bg-color;
+	font-family: 'jura', sans-serif;
+	color: $font-color;
+}
+
+/******************
+PRELOADER
+******************/
+
+
+
+
+/******************
+CONTAINER
+******************/
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#content {
+	position: absolute;
+	z-index: 5;
+	text-align: center;
+	.btn {
+		color: $font-color;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1.5em;
+		text-align: center;
+		line-height: 45px;
+		margin: 12px;
+		max-width: 160px;
+		position: relative;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: 100%;
+		border: 1px solid;
+		overflow: hidden;
+		position: relative;
+		span {
+			z-index: 20;
+		}
+		&:after {
+			background: #fff;
+			content: "";
+			height: 155px;
+			left: -75px;
+			opacity: .2;
+			position: absolute;
+			top: -50px;
+			transform: rotate(35deg);
+			transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+			width: 50px;
+			z-index: -10;
+		}
+		&:hover {
+			text-decoration: none;
+			border: 1px solid dodgerblue;
+			&:after {
+			left: 120%;
+			transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+			}
+		}
+		@media screen and (max-width: 480px) {
+			width: 100%;
+			font-size: 1em;
+			margin: 5px 5px;
+		}
+	}
+
+	h1 {
+		font-size: 4.5em;
+		font-weight: 200;
+		font-stretch: extra-expanded;
+		letter-spacing: 5px;
+		text-align: center;
+		@media screen and (max-width: 480px) {
+			font-size: 2em;
+      		font-stretch: normal;
+		}
+		margin: 15% auto;
+	}
+}
+
+/*DropDown Button*/
+.dropdown {
+    position: relative;
+
+	.dropdown-content {
+		visibility: hidden;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transition: opacity 2s;
+		transition-timing-function: ease-out;
+		display: inline-block;
+		opacity: 0;
+	}
+
+	.dropdown-show {
+		visibility: visible;
+		overflow: auto;
+		opacity: 1;
+		transition: opacity 2s;
+		transition-timing-function: ease-out;
+	}
+
+	a {
+		margin: 0;
+		padding: 0;
+	}
+}
+#more-btn {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/******************
+FOOTER
+******************/

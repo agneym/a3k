@@ -1,0 +1,69 @@
+$bg-color: #000000;
+$font-color: #ffffff;
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif, Arial;
+    background-color: floralwhite; 
+}   
+.cover-image {
+    width: 100%;
+}
+#about {
+    text-align: center;
+    line-height: 1.8em;
+    overflow: hidden;
+    .overlay {
+        background:transparent; 
+        position:relative; 
+        width:640px;
+        height:480px; 
+        top:480px;  
+        margin-top:-480px;  
+    }
+    iframe {
+        min-height: 50vh;
+    }
+    .description {
+        font-size: large;
+        margin: 20px 20px;
+    }
+}
+#sponsors {
+    
+    .carousel-cell.is-selected {
+    background: mediumvioletred;
+    }
+
+}
+.carousel-cell {
+        width: 28%;
+        height: 40vh;
+        margin: 10px;
+        border-radius: 5px;
+        counter-increment: carousel-cell;
+    }
+
+    .carousel-cell.is-selected {
+    background: #ED2;
+    }
+
+    .carousel-cell:before {
+        display: block;
+        text-align: center;
+        content: counter(carousel-cell); 
+        line-height: 200px;
+        font-size: 80px;
+        color: $font-color;
+    }
+.footer {
+    background-color: $bg-color;
+    color: $font-color !important;
+    a:hover {
+        color: $font-color;
+    }
+}

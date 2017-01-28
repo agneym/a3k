@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "Abhiyanthriki",
+  "launch_path": "/index.html",
+  "description": "Abhiyanthriki is the Biennial Technical Fest of Rajagiri School of Engineering and Technology.",
+  "icons": {
+    "128": "/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "Boy With Silver Wings",
+    "url": "https://boywithsilverwings.github.io"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Abhiyanthriki",
+      "description": "Abhiyanthriki is the Biennial Technical Fest of Rajagiri School of Engineering and Technology."
+    }
+  }
+}
