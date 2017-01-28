@@ -1,69 +1,72 @@
-$bg-color: #000000;
-$font-color: #ffffff;
-
-
-* {
-    box-sizing: border-box;
-}
+$color1: #00d1b2;
+$color2: #23d160;
+$color3: #ffdd57;
+$color4: #ff3860;
+$color5: dodgerblue;
 body {
     margin: 0;
-    font-family: Helvetica, sans-serif, Arial;
-    background-color: floralwhite; 
-}   
-.cover-image {
-    width: 100%;
+}
+.section {
+    color: white;
+    @media only screen and (min-width: 768px) {
+        height: 100vh;
+    }
+    border: 1px outset white;
+    &:nth-of-type(2) {
+        background-color: $color5;
+    }
+    &:nth-of-type(3) {
+        background-color: $color1;
+    }
+}
+.vertical-nav {
+    position: fixed;
+    left: 95%;
+    top: 45%;
+    @media only screen and (max-width: 480px) {
+        display: none;
+    }
+    .nav-btn {
+        width: 6vh;
+        height: 6vh;
+        cursor: pointer;
+        background: url('../images/icon-arrow.svg') no-repeat;
+        background-position: center;
+        margin: 10px auto;
+    }
+    .nav-btn:first-of-type {
+       transform: rotate(180deg);   
+    }
+}
+.title {
+    font-weight: 100;
+    line-height: 1.2;
+}
+#poster {
+    background: #000000 url('../images/cyan.jpg') no-repeat center;
+    background-size: contain;
+    height: 100vh;
 }
 #about {
-    text-align: center;
-    line-height: 1.8em;
-    overflow: hidden;
-    .overlay {
-        background:transparent; 
-        position:relative; 
-        width:640px;
-        height:480px; 
-        top:480px;  
-        margin-top:-480px;  
+    .container .row .map{
+        height: 70vh;
+        iframe {
+            pointer-events: none;
+        }
     }
-    iframe {
-        min-height: 50vh;
-    }
-    .description {
+    p {
         font-size: large;
-        margin: 20px 20px;
     }
-}
-#sponsors {
-    
-    .carousel-cell.is-selected {
-    background: mediumvioletred;
+    @media only screen and (min-width: 680px) {
+        .desc {
+            padding-top: 10%;
+        }
     }
-
-}
-.carousel-cell {
-        width: 28%;
-        height: 40vh;
-        margin: 10px;
-        border-radius: 5px;
-        counter-increment: carousel-cell;
+    i {
+        font-size: medium;
     }
-
-    .carousel-cell.is-selected {
-    background: #ED2;
-    }
-
-    .carousel-cell:before {
-        display: block;
-        text-align: center;
-        content: counter(carousel-cell); 
-        line-height: 200px;
-        font-size: 80px;
-        color: $font-color;
-    }
-.footer {
-    background-color: $bg-color;
-    color: $font-color !important;
-    a:hover {
-        color: $font-color;
+    .desc {
+        margin-top: 20px;
+        text-align: justify;
     }
 }
