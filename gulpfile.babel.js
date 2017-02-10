@@ -94,7 +94,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('dist/styles'))
     .pipe(gulp.dest('.tmp/styles'));
   var aboutPage = gulp.src([
-    'app/styles/about.scss'
+    'app/styles/*.scss'
   ])
   .pipe($.newer('.tmp/styles'))
   .pipe($.sourcemaps.init())
@@ -115,13 +115,14 @@ gulp.task('styles', () => {
 // Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
 // to enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the
 // `.babelrc` file.
-gulp.task('scripts', () =>
-    gulp.src([
+gulp.task('scripts', () => {
+    var mainScreen = gulp.src([
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
       './app/scripts/vendor/three.min.js',
-      './app/scripts/vendor/*.js',
+      './app/scripts/vendor/Detector.js',
+      './app/scripts/vendor/RequestAnimationFrame.js',
       './app/scripts/main.js'
       // Other scripts
     ])
@@ -136,8 +137,26 @@ gulp.task('scripts', () =>
       .pipe($.size({title: 'scripts'}))
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('dist/scripts'))
+      .pipe(gulp.dest('.tmp/scripts'));
+    var aboutPage = gulp.src([
+      './app/scripts/vendor/wow.min.js',
+      './app/scripts/vendor/countUp.min.js',
+      './app/scripts/about.js'
+    ])
+       .pipe($.newer('.tmp/scripts'))
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/scripts'))
-);
+      .pipe($.concat('about.min.js'))
+      .pipe($.uglify({preserveComments: 'some'}))
+      // Output files
+      .pipe($.size({title: 'scripts'}))
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/scripts'))
+      .pipe(gulp.dest('.tmp/scripts'));
+    return merge(mainScreen, aboutPage);
+});
 
 // Scan your HTML for assets & optimize them
 gulp.task('html', () => {
