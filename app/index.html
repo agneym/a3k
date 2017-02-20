@@ -4,8 +4,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="">
+	<meta name="description" content="Abhiyanthriki, RSET's national level technical fest, is one of the most popular amongst the technical festivals hosted in the country, as evidenced by the increasing contestant turn up every edition. Engineering knowledge and imagination combine to manifest in the technically challenging and creative competitions, ranging from the fun to the serious academic-oriented ones. Abhiyanthriki is held once in two years.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="abhiyanthriki 2017, rajagiri tech fest, a3k 2017, abhiyanthriki, upcoming tech fests">
 	<title>A3K 2017</title>
 
 	<!-- Disable tap highlight on IE -->
@@ -16,8 +17,8 @@
 
 	<!-- Add to homescreen for Chrome on Android -->
 	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="Web Starter Kit">
-	<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+	<meta name="application-name" content="A3K 2017">
+	<link rel="icon" sizes="192x192" href="images/touch/android-chrome-192x192.png">
 
 	<!-- Add to homescreen for Safari on iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -42,10 +43,12 @@
 </head>
 
 <body>
-	<!-- Add your site or app content here -->
 	<div id="container">
 		<div id="content">
-			<h1>Abhiyanthriki 2017</h1>
+			<div class="header">
+				<img src="images/logo.png" alt="A3K Logo" width="200">
+				<h1>Abhiyanthriki 2017</h1>
+			</div>
 			<div id="btn-ctn">
 				<a href="soon.html" class="btn">
 						<span>Events</span>
@@ -70,6 +73,17 @@
 					</span>
 				</span>
 			</div>
+			<div class="social-media">
+				<a class="icon icon-effect" href="https://www.facebook.com/abhiyanthriki/" target="_blank">
+					<img src="images/social/facebook.svg" alt="facebook"/>
+				</a>
+				<a class="icon icon-effect" href="https://www.instagram.com/a3k_2017" target="_blank">
+					<img src="images/social/instagram.svg" alt="instagram"/>
+				</a>
+				<a href="https://play.google.com/store/apps/details?id=roundmelon.jv.a3k2k17" target="_blank">
+					<img src="images/social/google-play-badge.png" id="play-store" alt="Get Android App on Google Play" height="65px"/>
+				</a>
+			</div>
 		</div>
 	</div>
  
@@ -79,6 +93,18 @@
 	<script type="text/javascript" src="scripts/vendor/RequestAnimationFrame.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 	<!-- endbuild -->
+
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	<script>
+		var OneSignal = window.OneSignal || [];
+		OneSignal.push(["init", {
+		appId: "e9b486dc-06eb-478f-9b6e-63b873520661",
+		autoRegister: true,
+		notifyButton: {
+			enable: true /* Set to false to hide */
+		}
+		}]);
+	</script>
 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 	<script>

@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
 	navigationTrigger.on('click', function(event){
 		event.preventDefault();
 		
-		if( animating == false ) {
+		if( animating === false ) {
 			animating = true;
 			if( navigationTrigger.hasClass('project-open') ) {
 				//close visible project

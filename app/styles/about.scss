@@ -20,7 +20,7 @@ a {
     transition: all .5s ease-in-out;
     &:hover {
         color: $color3;
-        font-size: large;
+        font-size: 1em;
         text-decoration: none;
     }
 }
@@ -224,9 +224,30 @@ ul {
     #logo {
         width: 200px;
     }
+    .social-container {
+        padding: 30px;
+        width: 100%;
+        text-align: center;
+        .icon {
+            margin: 10px;
+            padding: 20px;
+            font-size: x-large;
+            transition: transform ease-out 0.1s, background 0.2s;
+            &:hover, &:active, &:visited {
+                background: rgba(255,255,255,0.05);
+                transform: scale(0.9);
+	            color: #fff;
+            }
+            @media only screen and (max-width: 480px) {
+                padding: 10px 15px;
+                border: 1px white solid;
+                border-radius: 10px;
+            }
+        }
+    }
     p {
         @media only screen and (max-width: 480px) {
-            font-size: 1em;
+            font-size: 1.2em;
             padding: 10px 0;       
         }
     }

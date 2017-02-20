@@ -6,6 +6,11 @@
         "source": "/about",
         "destination": "/about.html",
         "type": 301
+      },
+      {
+        "source": "/workshop",
+        "destination": "/workshops.html",
+        "type": 301
       }
     ]
   }

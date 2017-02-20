@@ -418,14 +418,15 @@ Projects
 
 .cd-projects-previews a,
 .cd-projects .preview-image {
+  color: #fff;
   /* set a background image for each project */
-  background: #5b927d url(../images/1.jpg) no-repeat center center;
+  background: #5b927d url(../images/bigdata.jpg) no-repeat center center;
   background-size: cover;
 }
 
 .cd-projects-previews li:nth-of-type(2) a,
 .cd-projects > li:nth-of-type(2) .preview-image {
-  background: #a8ae7e url(../images/1.jpg) no-repeat center center;
+  background: #a8ae7e url(http://jonlieffmd.com/wp-content/uploads/2012/12/frequencies_2.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -437,12 +438,13 @@ Projects
 
 .cd-projects-previews li:nth-of-type(4) a,
 .cd-projects > li:nth-of-type(4) .preview-image {
-  background: #835531 url(../images/1.jpg) no-repeat center center;
+  background: #835531 url(../images/3ds.jpg) no-repeat center center;
   background-size: cover;
 }
 
 .cd-project-title {
   position: absolute;
+  font-size: 5em;
   width: 100%;
   top: calc(50% - 20px);
   left: 0;
@@ -495,7 +497,7 @@ Projects
   transition: transform 0.3s 0.3s;
 }
 .cd-project-title h2 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   line-height: 1.5;
   font-weight: 700;
 }

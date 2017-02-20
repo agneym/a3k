@@ -155,7 +155,24 @@ gulp.task('scripts', () => {
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('dist/scripts'))
       .pipe(gulp.dest('.tmp/scripts'));
-    return merge(mainScreen, aboutPage);
+    var workshopsPage = gulp.src([
+      './app/scripts/vendor/modernizr.js',
+      './app/scripts/workshops.js'
+    ])
+       .pipe($.newer('.tmp/scripts'))
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write())
+      .pipe(gulp.dest('.tmp/scripts'))
+      .pipe($.concat('workshops.min.js'))
+      .pipe($.uglify({preserveComments: 'some'}))
+      // Output files
+      .pipe($.size({title: 'scripts'}))
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/scripts'))
+      .pipe(gulp.dest('.tmp/scripts'));
+    var inter = merge(mainScreen, aboutPage);
+    return merge(inter,workshopsPage);
 });
 
 // Scan your HTML for assets & optimize them

@@ -1,4 +1,4 @@
-new WOW().init();
+
 var easingFn = function (t, b, c, d) {
   var ts = (t /= d) * t;
   var tc = ts * t;
@@ -24,7 +24,6 @@ $.fn.visible = function() {
 };
 
 $(window).on("scroll",function() {
-  $("#prev").show();
   if($('#stats').visible()===true) {
     $('#video')[0].play();
     var count2 = new CountUp("count2", 0, 40, 0, 3, options);
@@ -32,6 +31,7 @@ $(window).on("scroll",function() {
     $(window).off("scroll");
   }
 });
+
 $("#prev").on("click",function() {
   var tempPos = 0;
   $('.section').each(function() {
@@ -45,6 +45,7 @@ $("#prev").on("click",function() {
     scrollTop: tempPos
   }, 1500);
 });
+
 $("#next").on("click",function() {
   $('.section').each(function() {
     var sectionTop = $(this).position().top;
@@ -56,6 +57,7 @@ $("#next").on("click",function() {
     }
   });
 });
+
 $(function(){
-  $("#prev").hide();
-})
+  new WOW().init();
+});

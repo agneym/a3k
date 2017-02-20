@@ -10,16 +10,17 @@
         "sizes": "152x152",
         "type": "image/png"
       }, {
-        "src": "images/touch/ms-touch-icon-144x144-precomposed.png",
+        "src": "images/touch/mstile-150x150.png",
         "sizes": "144x144",
         "type": "image/png"
       }, {
-        "src": "images/touch/chrome-touch-icon-192x192.png",
-        "sizes": "192x192",
+        "src": "images/touch/android-chrome-512x512.png",
+        "sizes": "512x512",
         "type": "image/png"
       }],
   "start_url": "/index.html?homescreen=1",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#075a5e"
+  "theme_color": "#075a5e",
+  "gcm_sender_id": "482941778795"
 }
