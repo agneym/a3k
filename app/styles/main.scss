@@ -6,7 +6,8 @@ $font-color: #ffffff;
 
 body{
 	margin: 0;
-	overflow: hidden; 
+	overflow-x: hidden;
+	overflow-y: auto; 
 	width: 100%;
 	position: relative;
 	background-color: $bg-color;
@@ -29,6 +30,12 @@ CONTAINER
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  canvas {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+  }
 }
 
 #logo {
@@ -37,7 +44,6 @@ CONTAINER
 }
 
 #content {
-	position: absolute;
 	z-index: 5;
 	text-align: center;
 	padding: 10px;

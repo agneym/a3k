@@ -96,10 +96,14 @@ ul {
 #about {
     .container .row .map{
         height: 70vh;
-        iframe {
-            pointer-events: none;
-        }
     }
+    .map iframe{
+        pointer-events: none;
+        position: relative;
+    }
+    .map iframe.clicked{
+		pointer-events: auto;
+	}
     p {
         font-size: large;
     }
@@ -119,7 +123,6 @@ ul {
     }
 }
 #stats {
-
   .countstats {
       width: 80%;
       display: flex;
@@ -251,4 +254,73 @@ ul {
             padding: 10px 0;       
         }
     }
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
 }

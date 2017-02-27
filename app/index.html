@@ -4,10 +4,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>A3K 2017</title>
 	<meta name="description" content="Abhiyanthriki, RSET's national level technical fest, is one of the most popular amongst the technical festivals hosted in the country, as evidenced by the increasing contestant turn up every edition. Engineering knowledge and imagination combine to manifest in the technically challenging and creative competitions, ranging from the fun to the serious academic-oriented ones. Abhiyanthriki is held once in two years.">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="abhiyanthriki 2017, rajagiri tech fest, a3k 2017, abhiyanthriki, upcoming tech fests">
-	<title>A3K 2017</title>
+	<meta property="og:title" content="A3K 2017" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://a3k.in/" />
+	<meta property="og:image" content="https://a3k.in/images/touch/android-chrome-512x512.png" />
+	<meta property="og:description" 
+  		content="Abhiyanthriki, RSET's national level technical fest, is one of the most popular amongst the technical festivals hosted in the country, as evidenced by the increasing contestant turn up every edition. Engineering knowledge and imagination combine to manifest in the technically challenging and creative competitions, ranging from the fun to the serious academic-oriented ones. Abhiyanthriki is held once in two years." />
 
 	<!-- Disable tap highlight on IE -->
 	<meta name="msapplication-tap-highlight" content="no">
@@ -60,7 +66,7 @@
 						<span>About</span>
 				</a>
 				<span class="dropdown">
-					<a href="#!" class="btn" id="more-btn">
+					<a href="#!" onclick="event.preventDefault();" class="btn" id="more-btn">
 							<span>MORE ▼</span>
 					</a>
 					<span class="dropdown-content">
@@ -94,14 +100,14 @@
 	<script type="text/javascript" src="scripts/main.js"></script>
 	<!-- endbuild -->
 
-	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
 	<script>
 		var OneSignal = window.OneSignal || [];
 		OneSignal.push(["init", {
 		appId: "e9b486dc-06eb-478f-9b6e-63b873520661",
 		autoRegister: true,
 		notifyButton: {
-			enable: true /* Set to false to hide */
+			enable: true 
 		}
 		}]);
 	</script>

@@ -25,7 +25,7 @@
 $bgcolor: #000000;
 body {
     margin: 0;
-    height: 100%;
+    height: 100vh;
     background-color: $bgcolor;
 }
 main {
@@ -34,14 +34,46 @@ main {
 .dept {
     margin: 20px auto;
     position: relative;
-    &:hover {
-        @include backlight(0, 2vw, 2vw, 0.75, #0fffc1, #7e0fff, 5s);
-    }
     img {
         cursor: pointer;
         display: block;
         margin: auto;
         background-color: $bgcolor;
+    }
+}
+#aei {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #be1cfb, #c160f9, 5s);
+    }
+}
+#ce {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #4CAF50, #00C853, 5s);
+    }
+}
+#cse {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #3F51B5, #3F51B5, 5s);
+    }
+}
+#ec {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #FF9800, #FFD180, 5s);
+    }
+}
+#eee {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #FFEB3B, #FFFF8D, 5s);
+    }
+}
+#it {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #F44336, #FF5252, 5s);
+    }
+}
+#mech {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #03A9F4, #01579B, 5s);
     }
 }
 #a3k {

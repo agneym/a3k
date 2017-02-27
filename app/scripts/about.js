@@ -58,6 +58,19 @@ $("#next").on("click",function() {
   });
 });
 
-$(function(){
+$(function() {
+  
+  var imgDefer = document.getElementsByTagName('img');
+
+  $('.map').click(function() {
+		$(this).find('iframe').addClass('clicked')
+  }).mouseleave(function() {
+		$(this).find('iframe').removeClass('clicked')
+  });
+  for (var i=0; i<imgDefer.length; i++) {
+    if(imgDefer[i].getAttribute('data-src')) {
+      imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+    } 
+  } 
   new WOW().init();
 });

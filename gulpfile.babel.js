@@ -34,6 +34,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import {output as pagespeed} from 'psi';
 import merge from 'merge-stream';
 import pkg from './package.json';
+import critical from 'critical';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -109,7 +110,24 @@ gulp.task('styles', () => {
   .pipe($.sourcemaps.write('./'))
   .pipe(gulp.dest('dist/styles'))
   .pipe(gulp.dest('.tmp/styles'));
-  return merge(mainScreen, aboutPage);
+  var eventsPage = gulp.src([
+    'app/events/css/*.scss'
+  ])
+  .pipe($.newer('.tmp/styles'))
+  .pipe($.sourcemaps.init())
+  .pipe($.sass({
+    precision: 10
+  }).on('error', $.sass.logError))
+  .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+  .pipe(gulp.dest('.tmp/styles'))
+  // Concatenate and minify styles
+  .pipe($.if('*.css', $.cssnano()))
+  .pipe($.size({title: 'styles'}))
+  .pipe($.sourcemaps.write('./'))
+  .pipe(gulp.dest('dist/events/css'))
+  .pipe(gulp.dest('.tmp/events/css'));
+  var temp = merge(mainScreen, aboutPage);
+  return merge(temp,eventsPage);
 });
 
 // Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
@@ -117,9 +135,6 @@ gulp.task('styles', () => {
 // `.babelrc` file.
 gulp.task('scripts', () => {
     var mainScreen = gulp.src([
-      // Note: Since we are not using useref in the scripts build pipeline,
-      //       you need to explicitly list your scripts here in the right order
-      //       to be correctly concatenated
       './app/scripts/vendor/three.min.js',
       './app/scripts/vendor/Detector.js',
       './app/scripts/vendor/RequestAnimationFrame.js',
@@ -138,6 +153,7 @@ gulp.task('scripts', () => {
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('dist/scripts'))
       .pipe(gulp.dest('.tmp/scripts'));
+
     var aboutPage = gulp.src([
       './app/scripts/vendor/wow.min.js',
       './app/scripts/vendor/countUp.min.js',
@@ -155,6 +171,7 @@ gulp.task('scripts', () => {
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('dist/scripts'))
       .pipe(gulp.dest('.tmp/scripts'));
+
     var workshopsPage = gulp.src([
       './app/scripts/vendor/modernizr.js',
       './app/scripts/workshops.js'
@@ -171,8 +188,28 @@ gulp.task('scripts', () => {
       .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('dist/scripts'))
       .pipe(gulp.dest('.tmp/scripts'));
+    var eventsPage = gulp.src([
+      './app/events/js/modernizr.js',
+      './app/events/js/jquery-2.1.1.js',
+      './app/events/js/events.js',
+      './app/events/js/main.js'
+    ])
+       .pipe($.newer('.tmp/events/js'))
+      .pipe($.sourcemaps.init())
+      .pipe($.babel())
+      .pipe($.sourcemaps.write())
+      .pipe(gulp.dest('.tmp/events/js'))
+      .pipe($.concat('main.min.js'))
+      .pipe($.uglify({preserveComments: 'some'}))
+      // Output files
+      .pipe($.size({title: 'js'}))
+      .pipe($.sourcemaps.write('.'))
+      .pipe(gulp.dest('dist/events/js'))
+      .pipe(gulp.dest('.tmp/events/js'));
+
     var inter = merge(mainScreen, aboutPage);
-    return merge(inter,workshopsPage);
+    inter = merge(inter,workshopsPage);
+    return merge(inter,eventsPage);
 });
 
 // Scan your HTML for assets & optimize them
@@ -200,27 +237,34 @@ gulp.task('html', () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('critical', function (cb) {
+    critical.generate({
+        inline: true,
+        base: 'dist/',
+        src: 'index.html',
+        dest: 'dist/index.html',
+        minify: true
+    });
+});
+
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
-// Watch files for changes & reload
+
 gulp.task('serve', ['scripts', 'styles'], () => {
   browserSync({
     notify: false,
-    // Customize the Browsersync console logging prefix
     logPrefix: 'WSK',
-    // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main'],
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
     // https: true,
     server: ['.tmp', 'app'],
     port: 3000
   });
 
   gulp.watch(['app/**/*.html'], reload);
+  gulp.watch(['app/**/*.js'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['app/events/css/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
@@ -230,12 +274,8 @@ gulp.task('serve:dist', ['default'], () =>
   browserSync({
     notify: false,
     logPrefix: 'WSK',
-    // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main'],
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
+    https: true,
     server: 'dist',
     port: 3001
   })
@@ -253,7 +293,6 @@ gulp.task('default', ['clean'], cb =>
 
 // Run PageSpeed Insights
 gulp.task('pagespeed', cb =>
-  // Update the below URL to the public URL of your site
   pagespeed('a3k.in', {
     strategy: 'mobile'
     // By default we use the PageSpeed Insights free (no API key) tier.
