@@ -266,6 +266,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/events/css/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['scripts', reload]);
+  gulp.watch(['app/events/js/*.js'], ['scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 

@@ -93,10 +93,17 @@ CONTAINER
 			margin: 5px 5px;
 		}
 	}
-
+	.header {
+		margin: 0 0 5% 0;
+	}
+	.sponsor {
+		position: relative;
+		left: 30%;
+	}
 	h1 {
 		font-size:5em;
 		font-weight: 200;
+		margin-bottom: 0;
 		font-stretch: extra-expanded;
 		letter-spacing: 5px;
 		text-align: center;
@@ -149,6 +156,7 @@ FOOTER
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 30px;
 	img {
 		margin: 0 1vw;
 	}

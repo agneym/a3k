@@ -1,3 +1,5 @@
+$bgcolor: #000000;
+
 @mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
   &:after {
     position: absolute;
@@ -22,15 +24,17 @@
     }
   }
 }
-$bgcolor: #000000;
+
 body {
     margin: 0;
     height: 100vh;
     background-color: $bgcolor;
 }
+
 main {
     margin: 30px auto;
 }
+
 .dept {
     margin: 20px auto;
     position: relative;
@@ -41,8 +45,12 @@ main {
         background-color: $bgcolor;
     }
 }
+
 #aei {
     &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #be1cfb, #c160f9, 5s);
+    }
+    @media screen and (max-width: 480px) {
         @include backlight(0, 2vw, 2vw, 0.75, #be1cfb, #c160f9, 5s);
     }
 }
@@ -50,14 +58,23 @@ main {
     &:hover {
         @include backlight(0, 2vw, 2vw, 0.75, #4CAF50, #00C853, 5s);
     }
+    @media screen and (max-width: 480px) {
+        @include backlight(0, 2vw, 2vw, 0.75, #4CAF50, #00C853, 5s);
+    }
 }
 #cse {
     &:hover {
         @include backlight(0, 2vw, 2vw, 0.75, #3F51B5, #3F51B5, 5s);
     }
+    @media screen and (max-width: 480px) {
+         @include backlight(0, 2vw, 2vw, 0.75, #3F51B5, #3F51B5, 5s);
+    }
 }
 #ec {
     &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #FF9800, #FFD180, 5s);
+    }
+    @media screen and (max-width: 480px) {
         @include backlight(0, 2vw, 2vw, 0.75, #FF9800, #FFD180, 5s);
     }
 }
@@ -65,15 +82,32 @@ main {
     &:hover {
         @include backlight(0, 2vw, 2vw, 0.75, #FFEB3B, #FFFF8D, 5s);
     }
+    @media screen and (max-width: 480px) {
+        @include backlight(0, 2vw, 2vw, 0.75, #FFEB3B, #FFFF8D, 5s);
+    }
 }
 #it {
     &:hover {
         @include backlight(0, 2vw, 2vw, 0.75, #F44336, #FF5252, 5s);
     }
+    @media screen and (max-width: 480px) {
+       @include backlight(0, 2vw, 2vw, 0.75, #F44336, #FF5252, 5s);
+    }
 }
 #mech {
     &:hover {
         @include backlight(0, 2vw, 2vw, 0.75, #03A9F4, #01579B, 5s);
+    }
+    @media screen and (max-width: 480px) {
+        @include backlight(0, 2vw, 2vw, 0.75, #03A9F4, #01579B, 5s);    
+    }
+}
+#non-tech {
+    &:hover {
+        @include backlight(0, 2vw, 2vw, 0.75, #4d5056, #b9bbbf, 5s);
+    }
+    @media screen and (max-width: 480px) {
+        @include backlight(0, 2vw, 2vw, 0.75, #4d5056, #b9bbbf, 5s);    
     }
 }
 #a3k {

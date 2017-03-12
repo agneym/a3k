@@ -3,7 +3,9 @@ jQuery(document).ready(function($){
 	var dept = window.location.search.substr(1).split('=')[1];
 	var id = null;
 
-	$('#branchLogo').attr('src', '../../images/dept/'+dept+'.png');
+	$('h1').addClass('page-load');		
+
+	$('#branchLogo').attr('src', '../../images/dept/'+dept+'.jpg');
 
 	for(i=0; i<events[dept].length; i++) {
 		$('#gallery').append('<li class="cd-item" style="background-image: url(images/'+dept+'/'+i+'.jpg)";>\
@@ -64,9 +66,10 @@ jQuery(document).ready(function($){
 			var foldingContent = foldingPanel.find('.cd-fold-content');
 			foldingContent.load(url+' .cd-fold-content > *', function(event){
 				var event = events[dept][id];
-				$('.cd-fold-content').html('<h1>'+event.name+'</h1>'+
+				$('.cd-fold-content').html('<h1 class="event-title">'+event.name+'</h1>'+
 								'<img src="images/'+dept+'/'+id+'.jpg" alt="'+event.name+'" width="100%">'+
 								'<p>'+event.description+'</p>'+
+								'<p>'+event.rules+'</p>'+
 								'<p>Number of Participants:<strong> '+event.nop+'</strong></p>'+
 								'<p>Prizes worth <strong>'+event.prize+'</strong></p>'+
 								'<p>Date of Event: <strong>'+event.date+'</strong></p>'+
