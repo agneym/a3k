@@ -70,7 +70,7 @@ jQuery(document).ready(function($){
 								'<img src="images/'+dept+'/'+id+'.jpg" alt="'+event.name+'" width="100%">'+
 								'<p>'+event.description+'</p>'+
 								'<p>'+event.rules+'</p>'+
-								'<p>Number of Participants:<strong> '+event.nop+'</strong></p>'+
+								'<p>Number of Participants in a Team:<strong> '+event.nop+'</strong></p>'+
 								'<p>Prizes worth <strong>'+event.prize+'</strong></p>'+
 								'<p>Date of Event: <strong>'+event.date+'</strong></p>'+
 								'<p>Contact: <strong>'+event.contact+'</strong></p>');

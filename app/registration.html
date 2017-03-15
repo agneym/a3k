@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Registration - A3K 2017</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Abhiyanthriki is the Biennial Technical Fest of Rajagiri School of Engineering and Technology">
+  <meta name="keywords" content="Rajagiri, Abhiyanthriki, A3K, TechFest, 2017">
+  <meta name="author" content="Rajagiri School of Enginnering and Techonology">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Jura:300" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  <style>
+    html body {
+      min-height: 100vh;
+      margin: 0;
+      background-color: black;
+      color: white;
+    }
+    .carousel-slider {
+      height: 50vh !important;
+    }
+    .carousel {
+      width: 100%;
+    }
+    #submitButton {
+      display: block !important;
+      margin: 50px auto;
+    }
+    #hor-logo {
+      width: 60%;
+      display: block;
+      margin: 20px auto;
+    }
+    .subtitle {
+      font-size: smaller;
+    }
+    .cap {
+      text-transform:uppercase;
+    }
+    .title {
+      font-size: 3rem;
+      font-stretch: extra-expanded;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+    @media only screen and (max-width: 600px) {
+      .title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+      }
+    }
+    .input-field label {
+      color: snow;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    .select2-container--default .select2-selection--multiple {
+      background-color: black;
+    }
+    .select2-results__options {
+      color: black !important;
+    }
+    .select2-container--default .select2-search--inline .select2-search__field {
+      background-color: black;
+      border-bottom: 1px solid white;
+    }
+    .select2-selection__choice {
+      color: black;
+    }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+      background-color: white;
+    }
+    .select2-selection__choice {
+      padding: 10px;
+      font-size: medium;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+  <div class="carousel">
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=aei" target="_blank">
+      <img src="./events/images/aei/1.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=ce" target="_blank">
+      <img src="./events/images/ce/0.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=cs" target="_blank">
+      <img src="./events/images/cs/0.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=it" target="_blank">
+      <img src="./events/images/it/0.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=eee" target="_blank">
+      <img src="./events/images/eee/0.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=mech" target="_blank">
+      <img src="./events/images/mech/0.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=ec" target="_blank">
+      <img src="./events/images/ec/0.jpg">
+    </a>
+    <a class="carousel-item" href="https://a3k.in/events/index.html?dept=non-tech" target="_blank">
+      <img src="./events/images/non-tech/2.jpg">
+    </a>
+  </div>
+ 
+  <img src="./images/hor-logo.png" alt="Abhiyanthriki 2017" width="100%" id="hor-logo">
+  <div class="container">
+    <h1 class="white-text flow-text center-align title">Register with Us</h1>
+    <p class="grey-text flow-text center-align subtitle">For Hassle Free Payment at the Fest</p>
+    <form class="col s8" method="POST" action="https://script.google.com/macros/s/AKfycbwq_jYY6YFxBnVVj_IfJmztsRvlf0aZduKsKvsJTx147HhBaZa_/exec">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+        <input name="name" type="text" required class="validate cap" aria-required="true">
+        <label for="name" data-error="Enter College" data-success="College Successful">Name</label>
+      </div>  
+      <div class="input-field col s12">
+        <i class="material-icons prefix">business</i>
+        <input name="college" type="text" required class="validate cap" aria-required="true">
+        <label for="college" data-error="Enter College" data-success="College Successful">College</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input name="email" type="email" required class="validate" aria-required="true">
+        <label for="email" data-error="Please Enter Correct Mail Address" data-success="Email Success!">Email</label>
+      </div>
+      <div class="input-field col s12">
+        <i class="material-icons prefix">phone</i>
+        <input name="mobile" type="number" class="validate" required pattern="[\d]{2}" aria-required="true">
+        <label for="mobile" data-error="Please Enter Correct Phone Number" data-success="Phone Success!">Phone</label>
+      </div>
+      <div class="row">
+      <div class="col s12">
+        <i class="material-icons prefix">event</i>
+        <label for="id_events_multiple">
+         Choose Events:
+        <select multiple required name="eventid" id="id_events_multiple" class="browser-default">
+          <option value="DE_obfuscate">De Obfuscate</option>
+          <option value="The_Code_Scramble">The Code Scramble</option>
+          <option value="Appster">Appster</option>
+          <option value="RevImage">Rev Image</option>
+          <option value="Vilambaram">Vilambaram</option>
+          <option value="Robo_war">Robo War</option>
+          <option value="Electrizante">Electrizante</option>
+          <option value="Droneprix">Drone Prix</option>
+          <option value="Mackathon">Mackathon</option>
+          <option value="All_Terrain_Race">All Terrain Race</option>
+          <option value="Robo_soccer">Robo Soccer</option>
+          <option value="Analog_World">Analog World</option>
+          <option value="Mechmerize">Mechmerize</option>
+          <option value="Paper_Wings">Paper Wings</option>
+          <option value="Plan_your_Metropolitan">Plan your Metropolitan</option>
+          <option value="Dexter">Dexter</option>
+          <option value="CAD_Master">CAD Master</option>
+          <option value="Concrete_King">Concrete King</option>
+          <option value="3's_Football">3s Football</option>
+          <option value="Photography_Competition">Photography Competition</option>
+          <option value="Table_Tennis">Table Tennis</option>
+          <option value="Basketball">Basketball</option>
+          <option value="Conqer_The_Globe">Conquer the Globe</option>
+          <option value="Football_Auction">Football Auction</option>
+          <option value="Amazing_Race">Amazing Race</option>
+          <option value="The_Perfect_Pitch">Perfect Pitch</option>
+          <option value="221B_Baker_Street">221B Baker Street</option>
+          <option value="Counter_Strike">Counter Strike</option>
+          <option value="FIFA">FIFA</option>
+          <option value="Virtual_Reality">Virtual Reality</option>
+          <option value="Retro">Retro</option>
+        </select>
+        </label>
+      </div>
+      </div>
+      <input type="hidden" id="numberOfEvents" name="no"/>
+      <button class="waves-effect waves-light btn" id="submitButton" type="submit"><i class="material-icons left">cloud</i>Submit</button>
+    </form>
+  </div>
+  <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">ABHIYANTHRIKI 2017</h5>
+            <p class="grey-text text-lighten-4">RAJAGIRI SCHOOL OF ENGINEERING AND TECHNOLOGY</p>
+            <p class="grey-text text-lighten-4">March 17,18</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="./dept.html">Events</a></li>
+              <li><a class="grey-text text-lighten-3" href="./workshops.html">Workshops</a></li>
+              <li><a class="grey-text text-lighten-3" href="./about.html">About</a></li>
+              <li><a class="grey-text text-lighten-3" href="./about.html#connect">Connect</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2017 Abhiyanthriki
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.carousel').carousel();
+        var event = $('#id_events_multiple');
+       $('select').select2();
+        autoplay()   
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 3000);
+        }
+        event.on('change', function() {
+          var selectedEvents = $('.select2-selection__choice');
+          $('#numberOfEvents').val(selectedEvents.length);
+        });
+      });
+
+    </script>
+</body>
