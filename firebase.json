@@ -1,5 +1,10 @@
 {
   "hosting": {
-    "public": "dist"
+    "public": "dist",
+	"redirects": [ {
+	  "source" : "/reg",
+	  "destination" : "/registration.html",
+	  "type" : 301
+	}]
   }
 }

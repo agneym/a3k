@@ -36,7 +36,7 @@
       margin: 20px auto;
     }
     .subtitle {
-      font-size: smaller;
+      font-size: small;
     }
     .cap {
       text-transform:uppercase;
@@ -82,6 +82,7 @@
       padding: 10px;
       font-size: medium;
     }
+
   </style>
 
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
@@ -120,7 +121,8 @@
   <div class="container">
     <h1 class="white-text flow-text center-align title">Register with Us</h1>
     <p class="grey-text flow-text center-align subtitle">For Hassle Free Payment at the Fest</p>
-    <form class="col s8" method="POST" action="https://script.google.com/macros/s/AKfycbwq_jYY6YFxBnVVj_IfJmztsRvlf0aZduKsKvsJTx147HhBaZa_/exec">
+    <p class="grey-text flow-text center-align subtitle">There will also be On-Spot Registration</p>
+    <form class="col s8" id="registerForm" method="POST" action="https://script.google.com/macros/s/AKfycbzFAx545XauB0HzkoUs0BQEhohFvyN2yRMsuT5Fn7bjxM6HX1w/exec">
       <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
         <input name="name" type="text" required class="validate cap" aria-required="true">
@@ -182,8 +184,10 @@
         </label>
       </div>
       </div>
+      <div class="g-recaptcha" data-sitekey="6Lc6CRkUAAAAADuQ81UhmLn5-q_Wr7xlawE66e1Y"></div>
       <input type="hidden" id="numberOfEvents" name="no"/>
-      <button class="waves-effect waves-light btn" id="submitButton" type="submit"><i class="material-icons left">cloud</i>Submit</button>
+      <button class="waves-effect waves-light btn" id="submitButton" type="submit">
+        <i class="material-icons left">cloud</i>Submit</button>
     </form>
   </div>
   <footer class="page-footer">
@@ -211,7 +215,8 @@
         </div>
       </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script defer src='https://www.google.com/recaptcha/api.js'></script>
     <script>
       $(document).ready(function() {
         $('.carousel').carousel();
@@ -225,6 +230,11 @@
         event.on('change', function() {
           var selectedEvents = $('.select2-selection__choice');
           $('#numberOfEvents').val(selectedEvents.length);
+        });
+        $('#submitButton').on('click', function(event){
+          event.preventDefault();
+          $('#submitButton').prop('disabled', true);
+          $('#registerForm').submit();
         });
       });
 

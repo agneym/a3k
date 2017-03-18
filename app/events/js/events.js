@@ -158,7 +158,7 @@ var events = {
             "name": "ELECTRIZANTE",
             "description": "⚔ ELECTRIZANTE ⚔ <br/>By the department of Electrical and Electronics Engineering. <br/><br/> ⚙Come Electrify Conquer⚙<br/><br/>🗝A resistor here and and wire up there and finish the beginning rounds. 🔋<br/><br/>⏳Get out, run, 🏎race on the gocarting tracks 🏁 battle with paintball 🔫 and emerge as the king 👑",
             "date": "18-March-2017",
-            "rules": "Students can form groups of 4 members.<br/>Round 1:<br/>Solving crossword(Technical)<br/>8 teams scoring highest will move onto next level.<br/>Round 2:<br/>(Identify and find the clue)<br/>7 teams will be given a list of names.They should identify the devices in the list.There will be a code in each device which they should decode in the order given to them.It’s the key to the next level.6 teams will qualify to the next round.<br/>Round 3:<br/>(Pirates of connection)<br/>Each Group will be given an electric circuit diagram.They have to do the connections correctly in least  time.The  one  team out of 6  which comes last will be eliminated.<br/>Round 4:<br/>(EC Circuit Debugging)<br/>The 5 teams will be given an electronic circuit.Each team has to debug and get the required output.<br/>Round 5:<br/>(Paintball)<br/>4 teams will battle it out in a paintball duel.3 teams will qualify.<br/>Round 6:<br/>(Go karting)<br/>One member from each team will participate in the race to the finish line.<br/>",
+            "rules": "<br/>Round1📝<br/>Dash your way through the lighting quiz and prove your mettle coz that's your ticket into Electrizante.<br/>Round 2<br/>Recharge your brains to crack the hexcode and get through the picture trivia.<br/>Round 3<br/>Plugin,🔌 Charge'm🔋 and bring out the speedster in you ciz your wiring skills⏳ are the only way to the through this round.<br/>Round 4🛠<br/>Surprise, Surprise there is a prize,only the wise shall rise🚨. It's a mystery in a box where you need to think outside that box to make your way to the final 2 rounds.!<br/>Round 5 <br/>It's the final showdown of guns and paints and as the Charles Darwin said It's always about the survival of the fitest<br/>Round 6🏎🏆<br/>On your Mark.. Get set ... GO! Fuel your need for the sppes to emerge as the TITAN OF ELECTRIZANTE🏁🎖 !!!!",
             "nop": "4",
             "contact": "Vishnu Pradeep : 9400703348<br/>Aneeta Johnson:8281396115",
             "prize": "12000"
@@ -268,11 +268,11 @@ var events = {
         },
         {
             "name": "TABLE TENNIS",
-            "description": "",
+            "description": "*Come ! Win And Go!<br/><br/>A3K Event<br/><br/>Its time to have a cool event<br/><br/>Presenting to you for the very first time in a techfest, the rare event ever!!!<br/>Table Tennis Tournament",
             "date": "17-March-2017,18-March-2017",
             "rules": "",
             "nop": "1",
-            "contact": "Dennis Sebestian 9495169501",
+            "contact": "Shajas - 9746094795<br/>Nandu - 7736250548<br/>Joseph - 8289940688",
             "prize": "7000"
         },
         {
