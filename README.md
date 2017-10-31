@@ -10,4 +10,4 @@ Using Gulp as task runner.
 
 Hosted on Firebase.
 
-See it in action at [a3k.in](https://a3k.in)
+
